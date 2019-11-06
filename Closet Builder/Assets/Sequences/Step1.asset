@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05cafa490e2bc3b408402d72c6157a6b, type: 3}
+  m_Name: Step1
+  m_EditorClassIdentifier: 
+  transformData:
+  - ID: -29680
+    Position: {x: 0.749, y: -0.766, z: -0.909}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: -0, y: 0, z: 270}
+  - ID: -30332
+    Position: {x: 0.688, y: -0.76899993, z: 1.079}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: 0, y: 180, z: 90}

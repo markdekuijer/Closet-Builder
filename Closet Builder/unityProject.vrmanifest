@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.closetbuilder.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "D:\\Opslag\\UnityProjects\\Closet Builder\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "Closet Builder [Testing]"
+        }
+      }
+    }
+  ]
+}
