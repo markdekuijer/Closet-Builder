@@ -54,7 +54,7 @@ public class ItemScrewHelper : MonoBehaviour
 
         if (inPlace)
         {
-            startPosFromPreviousTask = task.ObjectToScrew.transform.localPosition;
+            startPosFromPreviousTask = task.ObjectToScrew.transform.position;
         }
     }
 
@@ -133,11 +133,12 @@ public class ItemScrewHelper : MonoBehaviour
             if (totalDifferenceFromPreviousTask == 0)
             {
                 totalDifferenceFromPreviousTask = Vector3.Distance(targetPosition, task.PlaceTask.FinalTarget.position);
+                Debug.Log("Found new distance!" + totalDifferenceFromPreviousTask);
             }
 
             if(task.ObjectToScrew != null)
             {
-                task.ObjectToScrew.transform.localPosition = GetTargetPos(passedPercentage);
+                task.ObjectToScrew.transform.position = GetTargetPos(passedPercentage);
             }
 
             if (passedDelta == task.RequiredPassedDelta)

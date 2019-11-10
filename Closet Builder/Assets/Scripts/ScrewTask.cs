@@ -19,7 +19,7 @@ public class ScrewTask : BaseTask
     public PlaceTask PlaceTask => placeTask;
     public float RequiredPassedDelta => requiredPassedDelta;
     public float TotalRotation => totalRotation;
-    public Transform TargetTransform { get { return targetTransform; } }
+    public Transform TargetTransform => targetTransform;
     public Vector3 FinalTargetPos { get { return targetTransform.position + targetTransform.forward * targetDepth; } }
     public Action OnSuccesfullyPlaced { get; private set; }
 

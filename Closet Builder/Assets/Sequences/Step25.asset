@@ -12,20 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05cafa490e2bc3b408402d72c6157a6b, type: 3}
   m_Name: Step25
   m_EditorClassIdentifier: 
-  transformData:
-  - ID: 17866
-    Position: {x: 0.749, y: 0.77, z: -0.909}
-    Scale: {x: 1, y: 1, z: 1}
-    RotationEuler: {x: -0, y: 0, z: 270}
-  - ID: 17918
-    Position: {x: 0.688, y: 0.767, z: 1.079}
-    Scale: {x: 1, y: 1, z: 1}
-    RotationEuler: {x: -0, y: 180, z: 90}
-  - ID: 17862
-    Position: {x: 0, y: -1.939, z: 0}
-    Scale: {x: 1, y: 1, z: 1}
-    RotationEuler: {x: -0, y: 0, z: 0}
-  - ID: -31602
-    Position: {x: 2.59, y: 0.7662, z: 0.324}
-    Scale: {x: 1, y: 1, z: 1}
-    RotationEuler: {x: -0, y: 0, z: 0}
+  transformData: []
