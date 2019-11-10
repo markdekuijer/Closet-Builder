@@ -50,7 +50,7 @@ MonoBehaviour:
     Scale: {x: 1, y: 1, z: 1}
     RotationEuler: {x: 270, y: 89.999825, z: 0}
   - ID: RightBack
-    Position: {x: 2.2076993, y: 0.036498554, z: 0.116701074}
+    Position: {x: 2.2076993, y: 0.036498554, z: -0.03579893}
     Scale: {x: 1, y: 1, z: 1}
     RotationEuler: {x: 270, y: 89.99987, z: 0}
   - ID: BottomHolder
@@ -74,7 +74,7 @@ MonoBehaviour:
     Scale: {x: 1, y: 1, z: 1}
     RotationEuler: {x: 270, y: 89.99983, z: 0}
   - ID: LeftBack
-    Position: {x: 1.5351, y: 0.0141, z: -0.07}
+    Position: {x: 1.5351, y: 0.0141, z: -0.2225}
     Scale: {x: 1, y: 1, z: 1}
     RotationEuler: {x: 270, y: 89.99987, z: 0}
   - ID: Top
