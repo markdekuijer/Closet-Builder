@@ -16,19 +16,19 @@ MonoBehaviour:
   - ID: WorkbenchPart
     Position: {x: 2.0320003, y: 0.38, z: -1.092253}
     Scale: {x: 1, y: 1, z: 1}
-    RotationEuler: {x: -0, y: 180, z: 0}
+    RotationEuler: {x: 0, y: 180, z: 0}
   - ID: WorkbenchPart2
     Position: {x: 1.477, y: 0.38, z: -1.09}
     Scale: {x: 1, y: 1, z: 1}
     RotationEuler: {x: -0, y: 180, z: 0}
   - ID: LeftWall
-    Position: {x: 0.905, y: 0.819, z: -1.091}
+    Position: {x: 2.459, y: 0.7668, z: 1.041}
     Scale: {x: 1, y: 1, z: 1}
-    RotationEuler: {x: -0, y: -0, z: 270}
+    RotationEuler: {x: -0, y: 180, z: 270}
   - ID: RightWall
-    Position: {x: -1.4175, y: 0.009400001, z: 0.3263998}
+    Position: {x: 2.68, y: 0.767, z: -0.981}
     Scale: {x: 1, y: 1, z: 1}
-    RotationEuler: {x: -0, y: 0, z: 0}
+    RotationEuler: {x: -0, y: 0, z: 90}
   - ID: DoorHandleLeft
     Position: {x: -3.3702855, y: 1.0922999, z: 2.7028296}
     Scale: {x: 1, y: 1, z: 1}
