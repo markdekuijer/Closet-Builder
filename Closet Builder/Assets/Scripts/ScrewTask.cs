@@ -11,7 +11,7 @@ public class ScrewTask : BaseTask
     [SerializeField] private float targetDepth = 0.028f;
     [SerializeField] private float totalRotation = 1440f;
 
-
+    [SerializeField] private bool onlyRotate;
     [SerializeField] private PlaceTask placeTask;
 
     public TargetAxis ScrewAxis;
@@ -22,6 +22,7 @@ public class ScrewTask : BaseTask
     public Transform TargetTransform => targetTransform;
     public Vector3 FinalTargetPos { get { return targetTransform.position + targetTransform.forward * targetDepth; } }
     public Action OnSuccesfullyPlaced { get; private set; }
+    public bool OnlyRotate { get { return onlyRotate; } }
 
     private bool checkCollision = true;
     public GameObject ObjectToScrew
