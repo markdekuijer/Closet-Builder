@@ -23,6 +23,7 @@ TagManager:
   - GroundProtector
   - ClothBarHolder
   - knotHolder
+  - Sack
   layers:
   - Default
   - TransparentFX

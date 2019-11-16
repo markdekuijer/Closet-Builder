@@ -171,8 +171,43 @@ namespace Valve.VR.InteractionSystem
 
             rigidbody.velocity = velocity;
             rigidbody.angularVelocity = angularVelocity;
+
+            CheckIfNeededTobeInSack();
         }
 
+        private bool canSack = false;
+        private Transform sackTransform;
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Sack"))
+            {
+                canSack = true;
+                sackTransform = other.transform;
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.gameObject.CompareTag("Sack"))
+            {
+                canSack = false;
+            }
+        }
+
+        private void CheckIfNeededTobeInSack()
+        {
+            if (sackTransform == null)
+                return;
+
+            if (canSack)
+            {
+                transform.SetParent(sackTransform.parent);
+            }
+            else if (transform.parent != null && transform.parent == sackTransform.parent)
+            {
+                transform.SetParent(null);
+            }
+        }
 
         public virtual void GetReleaseVelocities(Hand hand, out Vector3 velocity, out Vector3 angularVelocity)
         {

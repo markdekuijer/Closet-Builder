@@ -16,13 +16,13 @@ public class MoveTask : BaseTask
     {
         objectToMove.GetComponent<InteractableHoverEvents>().Activated = false;
         objectToMove.GetComponent<Interactable>().onDetachedFromHand += CheckCompletion;
-        start.transform.position = objectToMove.transform.position;
-        target.transform.position = objectToMove.transform.position + targetOffset;
     }
 
     protected override void StartTask()
     {
         base.StartTask();
+        start.transform.position = objectToMove.transform.localPosition;
+        target.transform.position = objectToMove.transform.localPosition + targetOffset;
         objectToMove.GetComponent<InteractableHoverEvents>().Activated = true;
         objectToMove.GetComponent<Interactable>().enabled = true;
         objectToMove.AddComponent<LinearDrive>().Initialize(start, target, completion);

@@ -54,7 +54,8 @@ public class ItemScrewHelper : MonoBehaviour
 
         if (inPlace)
         {
-            startPosFromPreviousTask = task.ObjectToScrew.transform.position;
+            //startPosFromPreviousTask = task.ObjectToScrew.transform.position;
+
         }
     }
 
@@ -65,10 +66,13 @@ public class ItemScrewHelper : MonoBehaviour
             if (inRange)
             {
                 transform.DOMove(task.TargetTransform.position, 0.2f);
-                transform.DORotateQuaternion(task.TargetTransform.rotation, 0.2f);
+                transform.DORotateQuaternion(task.TargetTransform.rotation, 0.2f).OnComplete(() => {
+                    if (task.ObjectToScrew != null)
+                    {
+                        task.ObjectToScrew.transform.SetParent(transform);// = GetTargetPos(passedPercentage);
+                    }
+                });
                 transform.SetParent(task.transform.parent);
-
-                //TODO only stop movement not rotation;
 
                 task.OnSuccesfullyPlaced?.Invoke();
                 inPlace = true;
@@ -136,13 +140,11 @@ public class ItemScrewHelper : MonoBehaviour
                 Debug.Log("Found new distance!" + totalDifferenceFromPreviousTask);
             }
 
-            if(task.ObjectToScrew != null)
-            {
-                task.ObjectToScrew.transform.position = GetTargetPos(passedPercentage);
-            }
+            //previously here
 
             if (passedDelta == task.RequiredPassedDelta)
             {
+                task.ObjectToScrew.transform.SetParent(null);
                 task.OnTaskComplete?.Invoke(task.ObjectToScrew);
                 totalDifferenceFromPreviousTask = 0f;
                 inRange = false;
