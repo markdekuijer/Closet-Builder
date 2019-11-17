@@ -9,6 +9,8 @@ public class PlaceTask : BaseTask
     [SerializeField] private Transform targetTransform;
     [SerializeField] private string targetTag;
     [SerializeField] private bool SymetricalEntry;
+    public Vector3 XYZReverse;
+
     public Transform FinalTarget { get { return targetTransform; } }
 
     public GameObject PreviouslyUsedObject;
@@ -23,7 +25,7 @@ public class PlaceTask : BaseTask
             }
             else if (SymetricalEntry && Vector3.Dot(targetTransform.forward, other.transform.forward) < -0.925)
             {
-                other.GetComponent<ItemPlacementHelper>()?.ForceInRangeMaterial(true, this);
+                other.GetComponent<ItemPlacementHelper>()?.ForceInRangeMaterial(true, this, true);
             }
             else
             {
