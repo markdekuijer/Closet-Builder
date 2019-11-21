@@ -9,6 +9,7 @@ using Valve.VR.InteractionSystem;
 public class ItemPlacementHelper : MonoBehaviour
 {
     [SerializeField] private Material inrangeMaterial;
+    [SerializeField] private float inverseLenght;
 
     private Material standartMaterial;
     private Renderer materialRenderer;
@@ -50,17 +51,21 @@ public class ItemPlacementHelper : MonoBehaviour
     {
         if (inRange)
         {
-            transform.DOMove(task.FinalTarget.position, 0.2f);
             transform.SetParent(task.transform.parent);
             if (!inversed)
             {
-                transform.DORotateQuaternion(task.FinalTarget.rotation, 0.2f);
+                transform.DOMove(task.FinalTarget.position, 0.2f);
+                transform.DORotate(task.FinalTarget.rotation.eulerAngles, 0.2f);
             }
             else
             {
-                ReverseObject();
+                Vector3 targetRot = ReverseObject();
+                transform.DORotate(targetRot, 0.2f);
+                Vector3 difVec = task.FinalTarget.position - transform.position;
+                Vector3 vecToAdd = difVec.normalized * inverseLenght;
+                transform.position += vecToAdd;
+                transform.DOMove(task.FinalTarget.position, 0.2f);
             }
-
 
             Destroy(GetComponent<Throwable>());
             Destroy(GetComponent<InteractableHoverEvents>());
@@ -76,14 +81,27 @@ public class ItemPlacementHelper : MonoBehaviour
         }
     }
 
-    public void ReverseObject()
+    public Vector3 ReverseObject()
     {
         if (task.XYZReverse.x == 1)
+        {
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            return new Vector3(-transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+
+        }
         if (task.XYZReverse.y == 1)
+        {
             transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
+            return new Vector3(transform.rotation.eulerAngles.x, -transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+
+        }
         if (task.XYZReverse.z == 1)
+        {
             transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, -transform.localScale.z);
+            return new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, -transform.rotation.eulerAngles.z);
+        }
+
+        return Quaternion.identity.eulerAngles;
     }
 
     private void LateUpdate()
