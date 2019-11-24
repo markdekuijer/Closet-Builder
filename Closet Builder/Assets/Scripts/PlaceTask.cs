@@ -10,6 +10,7 @@ public class PlaceTask : BaseTask
     [SerializeField] private string targetTag;
     [SerializeField] private bool SymetricalEntry;
     public Vector3 XYZReverse;
+    public Vector3 RotationReverse;
 
     public Transform FinalTarget { get { return targetTransform; } }
 

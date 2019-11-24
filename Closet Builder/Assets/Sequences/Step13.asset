@@ -12,4 +12,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05cafa490e2bc3b408402d72c6157a6b, type: 3}
   m_Name: Step13
   m_EditorClassIdentifier: 
-  transformData: []
+  transformData:
+  - ID: WorkbenchPart
+    Position: {x: 2.0320003, y: 0.38, z: -1.092253}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: -0, y: 180, z: 0}
+  - ID: WorkbenchPart2
+    Position: {x: 1.477, y: 0.38, z: -1.09}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: -0, y: 180, z: 0}
+  - ID: LeftWall
+    Position: {x: 2.291, y: 0.253, z: -0.608}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: 270, y: 90, z: 0}
+  - ID: RightWall
+    Position: {x: 2.68, y: 0.767, z: -0.981}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: -0, y: 0, z: 90}
+  - ID: DoorHandleLeft
+    Position: {x: -3.3702855, y: 1.0922999, z: 2.7028296}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: -0, y: 38.688953, z: 0}
+  - ID: LeftDoor
+    Position: {x: -0.6400001, y: 0.083000004, z: 0.57659984}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: -0, y: 38.688953, z: 0}
+  - ID: DoorHandleRight
+    Position: {x: -4.1846113, y: 1.0922999, z: 2.6594167}
+    Scale: {x: -1, y: 1, z: 1}
+    RotationEuler: {x: -0, y: 212.65492, z: 0}
+  - ID: RightDoor
+    Position: {x: -1.4239001, y: 0.083000004, z: 0.57659984}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: -0, y: 212.65492, z: 0}
+  - ID: MiddlePlate
+    Position: {x: 2.2085, y: 0.261, z: -0.22}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: 270, y: 89.999825, z: 0}
+  - ID: RightBack
+    Position: {x: 2.2076993, y: 0.036498554, z: -0.03579893}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: 270, y: 89.99987, z: 0}
+  - ID: BottomHolder
+    Position: {x: 2.2162, y: 0.4318, z: 0.25915}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: 270, y: 89.99983, z: 0}
+  - ID: ClothBar
+    Position: {x: -0.65250015, y: 1.8095, z: 0.32649994}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: -0, y: 0, z: 0}
+  - ID: MiddleRack
+    Position: {x: -1.0417001, y: 0.42589998, z: 0.57069993}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: -0, y: 0, z: 0}
+  - ID: TopRack
+    Position: {x: 1.5275, y: 0.497, z: -0.2289}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: 270, y: 89.99983, z: 0}
+  - ID: FloorFixed
+    Position: {x: 2.213, y: 0.4976, z: -0.6033}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: 270, y: 89.99983, z: 0}
+  - ID: LeftBack
+    Position: {x: 1.5351, y: 0.0141, z: -0.2225}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: 270, y: 89.99987, z: 0}
+  - ID: Top
+    Position: {x: -1.4231501, y: 1.89844, z: 0.5835998}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: -0, y: 0, z: 0}
+  - ID: BottomHolder (1)
+    Position: {x: 2.2162, y: 0.0915, z: 0.25915}
+    Scale: {x: 1, y: 1, z: -1}
+    RotationEuler: {x: 270, y: 89.99983, z: 0}
+  - ID: BackPanel
+    Position: {x: -1.0325, y: 0.082100004, z: 0.08199978}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: -0, y: 0, z: 0}

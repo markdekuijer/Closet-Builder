@@ -76,7 +76,6 @@ public class ItemPlacementHelper : MonoBehaviour
             task.PreviouslyUsedObject = gameObject;
             materialRenderer.material = standartMaterial;
             completed = true;
-            inversed = false;
             task.OnTaskComplete?.Invoke(gameObject);
         }
     }
@@ -86,22 +85,32 @@ public class ItemPlacementHelper : MonoBehaviour
         if (task.XYZReverse.x == 1)
         {
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-            return new Vector3(-transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
 
         }
         if (task.XYZReverse.y == 1)
         {
             transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
-            return new Vector3(transform.rotation.eulerAngles.x, -transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
 
         }
         if (task.XYZReverse.z == 1)
         {
             transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, -transform.localScale.z);
-            return new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, -transform.rotation.eulerAngles.z);
         }
 
-        return Quaternion.identity.eulerAngles;
+        if (task.RotationReverse.x == 1)
+        {
+            return new Vector3(task.FinalTarget.transform.rotation.eulerAngles.x + 180, task.FinalTarget.transform.rotation.eulerAngles.y, task.FinalTarget.transform.rotation.eulerAngles.z);
+        }
+        if (task.RotationReverse.y == 1)
+        {
+            return new Vector3(task.FinalTarget.transform.rotation.eulerAngles.x, task.FinalTarget.transform.rotation.eulerAngles.y + 180, task.FinalTarget.transform.rotation.eulerAngles.z);
+        }
+        if (task.RotationReverse.z == 1)
+        {
+            return new Vector3(task.FinalTarget.transform.rotation.eulerAngles.x, task.FinalTarget.transform.rotation.eulerAngles.y, task.FinalTarget.transform.rotation.eulerAngles.z + 180);
+        }
+
+        return new Vector3(task.FinalTarget.transform.rotation.eulerAngles.x, task.FinalTarget.transform.rotation.eulerAngles.y + 180, task.FinalTarget.transform.rotation.eulerAngles.z);
     }
 
     private void LateUpdate()
