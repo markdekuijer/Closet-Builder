@@ -21,7 +21,7 @@ public class HammerTask : BaseTask
     protected override void StartTask()
     {
         base.StartTask();
-        start = placeTask.PreviouslyUsedObject.transform.localPosition.y;
+        start = placeTask.FinalTarget.position.y;
     }
 
     private void DoHit()
@@ -33,7 +33,6 @@ public class HammerTask : BaseTask
 
         currentHits++;
         float t = currentHits / hitsRequired;
-        Debug.LogError(t);
         switch (ScrewAxis)
         {
             case TargetAxis.x:
@@ -73,7 +72,8 @@ public class HammerTask : BaseTask
     {
         if(collision.transform.CompareTag("Hammer"))
         {
-            if(currentTimeBetweenHits >= minTimeBetweenHits)
+            Vector3 dir = collision.gameObject.GetComponent<ItemHammerHelper>().targetTransform.position - transform.position;
+            if (currentTimeBetweenHits >= minTimeBetweenHits && Vector3.Dot(dir.normalized, Vector3.up) > 0.9f)
             {
                 DoHit();
             }
