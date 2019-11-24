@@ -59,7 +59,7 @@ public class HammerTask : BaseTask
 
         if(currentHits >= hitsRequired)
         {
-            OnTaskComplete?.Invoke(null);
+            OnTaskComplete?.Invoke(placeTask.PreviouslyUsedObject);
         }
     }
 
