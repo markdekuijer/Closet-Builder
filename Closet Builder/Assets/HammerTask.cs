@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class HammerTask : BaseTask
 {
+    public bool isGroundprotected;
     [SerializeField] private PlaceTask placeTask;
     [SerializeField] private float hitsRequired;
 
@@ -21,11 +22,17 @@ public class HammerTask : BaseTask
     protected override void StartTask()
     {
         base.StartTask();
-        start = placeTask.FinalTarget.position.y;
+        if (!isGroundprotected)
+            start = placeTask.FinalTarget.position.y;
+        else
+            start = placeTask.FinalTarget.position.x;
     }
 
     private void DoHit()
     {
+        if (currentHits >= hitsRequired)
+            return;
+
         if(hammerTween != null && hammerTween.IsActive())
         {
             hammerTween.Kill();
@@ -45,13 +52,13 @@ public class HammerTask : BaseTask
                 hammerTween = placeTask.PreviouslyUsedObject.transform.DOLocalMoveZ(Mathf.Lerp(start, start + depth, t), 0.1f);
                 break;
             case TargetAxis.minx:
-                hammerTween = placeTask.PreviouslyUsedObject.transform.DOLocalMoveY(Mathf.Lerp(start, start - depth, t), 0.1f);
+                hammerTween = placeTask.PreviouslyUsedObject.transform.DOLocalMoveX(Mathf.Lerp(start, start - depth, t), 0.1f);
                 break;
             case TargetAxis.miny:
                 hammerTween = placeTask.PreviouslyUsedObject.transform.DOLocalMoveY(Mathf.Lerp(start, start - depth, t), 0.1f);
                 break;
             case TargetAxis.minz:
-                hammerTween = placeTask.PreviouslyUsedObject.transform.DOLocalMoveY(Mathf.Lerp(start, start - depth, t), 0.1f);
+                hammerTween = placeTask.PreviouslyUsedObject.transform.DOLocalMoveZ(Mathf.Lerp(start, start - depth, t), 0.1f);
                 break;
             default:
                 break;
@@ -59,7 +66,10 @@ public class HammerTask : BaseTask
 
         if(currentHits >= hitsRequired)
         {
-            OnTaskComplete?.Invoke(placeTask.PreviouslyUsedObject);
+            hammerTween.OnComplete(() =>
+            {
+                OnTaskComplete?.Invoke(placeTask.PreviouslyUsedObject);
+            });
         }
     }
 
@@ -73,7 +83,11 @@ public class HammerTask : BaseTask
         if(collision.transform.CompareTag("Hammer"))
         {
             Vector3 dir = collision.gameObject.GetComponent<ItemHammerHelper>().targetTransform.position - transform.position;
-            if (currentTimeBetweenHits >= minTimeBetweenHits && Vector3.Dot(dir.normalized, Vector3.up) > 0.9f)
+            if (currentTimeBetweenHits >= minTimeBetweenHits && Vector3.Dot(dir.normalized, Vector3.up) > 0.9f && isGroundprotected == false)
+            {
+                DoHit();
+            }
+            if (currentTimeBetweenHits >= minTimeBetweenHits && Vector3.Dot(dir.normalized, Vector3.right) > 0.9f && isGroundprotected == true)
             {
                 DoHit();
             }

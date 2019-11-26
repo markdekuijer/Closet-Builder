@@ -12,4 +12,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05cafa490e2bc3b408402d72c6157a6b, type: 3}
   m_Name: Step24
   m_EditorClassIdentifier: 
-  transformData: []
+  transformData:
+  - ID: WorkbenchPart
+    Position: {x: 2.0320003, y: 0.38, z: -1.092253}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: -0, y: 180, z: 0}
+  - ID: WorkbenchPart2
+    Position: {x: 1.477, y: 0.38, z: -1.09}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: -0, y: 180, z: 0}
+  - ID: LeftWall
+    Position: {x: 0.70519984, y: 0.0122004375, z: -0.38714984}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: 0.00016058666, y: 89.99967, z: -0.00033324744}
+  - ID: RightWall
+    Position: {x: 0.7056998, y: 0.012000404, z: 0.38434994}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: 0.00016602008, y: 89.99966, z: -0.00020345006}
+  - ID: DoorHandleLeft
+    Position: {x: -3.3702855, y: 1.0922999, z: 2.7028296}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: -0, y: 38.688953, z: 0}
+  - ID: LeftDoor
+    Position: {x: -0.6400001, y: 0.083000004, z: 0.57659984}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: -0, y: 38.688953, z: 0}
+  - ID: DoorHandleRight
+    Position: {x: -4.1846113, y: 1.0922999, z: 2.6594167}
+    Scale: {x: -1, y: 1, z: 1}
+    RotationEuler: {x: -0, y: 212.65492, z: 0}
+  - ID: RightDoor
+    Position: {x: -1.4239001, y: 0.083000004, z: 0.57659984}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: -0, y: 212.65492, z: 0}
+  - ID: MiddlePlate
+    Position: {x: 0.7132001, y: 0.09470066, z: 0.00085002184}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: 0.00016239776, y: 89.99967, z: -0.0004944379}
+  - ID: RightBack
+    Position: {x: 0.4886986, y: 0.095501505, z: 0.18505117}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: 0.00017386829, y: 89.99967, z: -0.00046364876}
+  - ID: BottomHolder
+    Position: {x: 0.884, y: 0.087, z: 0.38}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: 0.00016239776, y: 89.99967, z: -0.0004944379}
+  - ID: ClothBar
+    Position: {x: 0.7061, y: 1.8645, z: -0.3811}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: -0, y: 89.99983, z: -0}
+  - ID: MiddleRack
+    Position: {x: -1.0417001, y: 0.42589998, z: 0.57069993}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: -0, y: 0, z: 0}
+  - ID: TopRack
+    Position: {x: 0.9492017, y: 0.7756997, z: -0.008049816}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: 0.00016239776, y: 89.99967, z: -0.0004944379}
+  - ID: FloorFixed
+    Position: {x: 0.9497999, y: 0.09019943, z: -0.38244984}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: 0.00016239776, y: 89.99967, z: -0.0004944379}
+  - ID: LeftBack
+    Position: {x: 0.46630156, y: 0.7681008, z: -0.0016499609}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: 0.00017386829, y: 89.99967, z: -0.00046364876}
+  - ID: Top
+    Position: {x: 0.963704, y: 1.9022697, z: 0.39003}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: 0.00015696435, y: 89.99966, z: -0.00052281225}
+  - ID: BottomHolder (1)
+    Position: {x: 0.5437001, y: 0.08700045, z: 0.38000026}
+    Scale: {x: 1, y: 1, z: -1}
+    RotationEuler: {x: 0.00016239776, y: 89.99967, z: -0.0004944379}
+  - ID: BackPanel
+    Position: {x: 0.46094096, y: 0.089201055, z: -0.0011185706}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: 0.00016602008, y: 89.99966, z: -0.00020345006}
