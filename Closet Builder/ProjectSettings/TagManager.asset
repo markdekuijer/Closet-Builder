@@ -24,6 +24,7 @@ TagManager:
   - ClothBarHolder
   - knotHolder
   - Sack
+  - SecretObj
   layers:
   - Default
   - TransparentFX

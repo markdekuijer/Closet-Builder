@@ -29,6 +29,11 @@ public class ScrewTask : BaseTask
     {
         get
         {
+            if(placeTask.SecretObject != null)
+            {
+                return placeTask.SecretObject;
+            }
+
             if(placeTask.PreviouslyUsedObject == null)
             {
                 Debug.Log("Didnt find an object that was used");

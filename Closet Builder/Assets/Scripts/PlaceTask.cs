@@ -12,6 +12,8 @@ public class PlaceTask : BaseTask
     public Vector3 XYZReverse;
     public Vector3 RotationReverse;
 
+    public GameObject SecretObject;
+
     public Transform FinalTarget { get { return targetTransform; } }
 
     public GameObject PreviouslyUsedObject;

@@ -11,6 +11,7 @@ public class MoveTask : BaseTask
     [SerializeField] private Transform target;
     [SerializeField] private Transform start;
     [SerializeField] private Vector3 targetOffset;
+    [SerializeField] private bool dontDestroyStuff;
 
     private void Awake()
     {
@@ -34,12 +35,15 @@ public class MoveTask : BaseTask
     {
         if(completion.value == targetVal)
         {
-            Destroy(objectToMove.GetComponent<InteractableHoverEvents>());
             Destroy(objectToMove.GetComponent<LinearDrive>());
-            Destroy(objectToMove.GetComponent<Interactable>());
-            objectToMove.GetComponent<BoxCollider>().enabled = false;
+            if (!dontDestroyStuff)
+            {
+                Destroy(objectToMove.GetComponent<InteractableHoverEvents>());
+                Destroy(objectToMove.GetComponent<Interactable>());
+                objectToMove.GetComponent<Interactable>().onDetachedFromHand -= CheckCompletion;
+            }
 
-            objectToMove.GetComponent<Interactable>().onDetachedFromHand -= CheckCompletion;
+            objectToMove.GetComponent<BoxCollider>().enabled = false;
             OnTaskComplete?.Invoke(objectToMove);
         }
     }

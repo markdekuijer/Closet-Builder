@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
@@ -12,7 +13,7 @@ public class ItemPlacementHelper : MonoBehaviour
     [SerializeField] private float inverseLenght;
 
     private Material standartMaterial;
-    private Renderer materialRenderer;
+    private List<Renderer> materialRenderer;
     private bool inRange;
     private bool completed;
     private PlaceTask task;
@@ -20,7 +21,7 @@ public class ItemPlacementHelper : MonoBehaviour
 
     private void Start()
     {
-        materialRenderer = GetComponentInChildren<Renderer>();
+        materialRenderer = GetComponentsInChildren<Renderer>().ToList();
     }
 
     public void ForceInRangeMaterial(bool shouldForce, PlaceTask placeTask, bool inversed = false)
@@ -35,7 +36,10 @@ public class ItemPlacementHelper : MonoBehaviour
         else
         {
             task = null;
-            materialRenderer.material = standartMaterial;
+            foreach (Renderer renderer in materialRenderer)
+            {
+                renderer.material = standartMaterial;
+            }
         }
     }
 
@@ -43,7 +47,7 @@ public class ItemPlacementHelper : MonoBehaviour
     {
         if(standartMaterial == null)
         {
-            standartMaterial = materialRenderer.material;
+            standartMaterial = materialRenderer[0].material;
         }
     }
 
@@ -74,7 +78,20 @@ public class ItemPlacementHelper : MonoBehaviour
             Destroy(GetComponent<SteamVR_Skeleton_Poser>());
 
             task.PreviouslyUsedObject = gameObject;
-            materialRenderer.material = standartMaterial;
+
+            foreach (Transform t in transform)
+            {
+                if (t.CompareTag("SecretObj"))
+                {
+                    task.SecretObject = t.gameObject;
+                    break;
+                }
+            }
+
+            foreach (Renderer renderer in materialRenderer)
+            {
+                renderer.material = standartMaterial;
+            }
             completed = true;
             task.OnTaskComplete?.Invoke(gameObject);
         }
@@ -117,7 +134,10 @@ public class ItemPlacementHelper : MonoBehaviour
     {
         if (inRange && !completed)
         {
-            materialRenderer.material = inrangeMaterial;
+            foreach (Renderer renderer in materialRenderer)
+            {
+                renderer.material = inrangeMaterial;
+            }
         }
     }
 }
