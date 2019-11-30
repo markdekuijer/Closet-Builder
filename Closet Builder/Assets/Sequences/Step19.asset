@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transformData:
   - ID: WorkbenchPart
-    Position: {x: 2.0320003, y: 0.38, z: -1.092253}
+    Position: {x: -1.3639996, y: 0.38, z: -1.092253}
     Scale: {x: 1, y: 1, z: 1}
     RotationEuler: {x: -0, y: 180, z: 0}
   - ID: WorkbenchPart2
-    Position: {x: 1.477, y: 0.38, z: -1.09}
+    Position: {x: -1.919, y: 0.38, z: -1.09}
     Scale: {x: 1, y: 1, z: 1}
     RotationEuler: {x: -0, y: 180, z: 0}
   - ID: LeftWall
@@ -29,10 +29,6 @@ MonoBehaviour:
     Position: {x: 2.2912, y: 0.26313934, z: -0.60810757}
     Scale: {x: 1, y: 1, z: 1}
     RotationEuler: {x: 90, y: 270.00018, z: 0}
-  - ID: DoorHandleLeft
-    Position: {x: -3.3702855, y: 1.0922999, z: 2.7028296}
-    Scale: {x: 1, y: 1, z: 1}
-    RotationEuler: {x: -0, y: 38.688953, z: 0}
   - ID: LeftDoor
     Position: {x: -0.6400001, y: 0.083000004, z: 0.57659984}
     Scale: {x: 1, y: 1, z: 1}
@@ -41,6 +37,10 @@ MonoBehaviour:
     Position: {x: -4.1846113, y: 1.0922999, z: 2.6594167}
     Scale: {x: -1, y: 1, z: 1}
     RotationEuler: {x: -0, y: 212.65492, z: 0}
+  - ID: DoorHandleLeft
+    Position: {x: -3.3702855, y: 1.0922999, z: 2.7028296}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: -0, y: 38.688953, z: 0}
   - ID: RightDoor
     Position: {x: -1.4239001, y: 0.083000004, z: 0.57659984}
     Scale: {x: 1, y: 1, z: 1}

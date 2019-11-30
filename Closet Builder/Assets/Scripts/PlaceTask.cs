@@ -20,6 +20,9 @@ public class PlaceTask : BaseTask
 
     private void OnTriggerStay(Collider other)
     {
+        if (Running == false || Completed == true)
+            return;
+
         if (other.gameObject.CompareTag(targetTag))
         {
             if (Vector3.Dot(targetTransform.forward, other.transform.forward) > 0.925)
@@ -39,6 +42,9 @@ public class PlaceTask : BaseTask
 
     private void OnTriggerExit(Collider other)
     {
+        if (Running == false || Completed == true)
+            return;
+
         if (other.gameObject.CompareTag(targetTag))
         {
             other.GetComponent<ItemPlacementHelper>()?.ForceInRangeMaterial(false, null);

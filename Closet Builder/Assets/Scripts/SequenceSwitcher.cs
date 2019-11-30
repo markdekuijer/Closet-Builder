@@ -9,7 +9,7 @@ public class SequenceSwitcher : MonoBehaviour
 {
     [SerializeField] private List<SpriteRenderer> explainers;
     [SerializeField] private Transform searchTransform;
-
+    [SerializeField] private AudioSource switcher;
     public void SwitchSequence(BuildSequenceData BuildSequence, Sequence nextSequence)
     {
         StartCoroutine(SwitchSequenceRoutine(BuildSequence, nextSequence));
@@ -18,6 +18,9 @@ public class SequenceSwitcher : MonoBehaviour
     private IEnumerator SwitchSequenceRoutine(BuildSequenceData BuildSequence, Sequence nextSequence)
     {
         SteamVR_Fade.View(Color.black, 1);
+        CameraFader.Instance.SwitchSequence();
+        yield return new WaitForSeconds(.5f);
+        switcher.Play();
         yield return new WaitForSeconds(1.5f);
         explainers.ForEach(x => x.sprite = nextSequence.SequenceExplainer);
         LoadScriptableObjectSequence(BuildSequence);

@@ -20,6 +20,8 @@ public class ItemScrewHelper : MonoBehaviour
     private ScrewTask task;
     private Vector3 targetPosition;
     private float passedDelta;
+    [SerializeField] private AudioSource sound;
+    [SerializeField] private AudioSource placesound;
 
     private void Start()
     {
@@ -65,6 +67,7 @@ public class ItemScrewHelper : MonoBehaviour
         {
             if (inRange)
             {
+                placesound.Play();
                 transform.DOMove(task.TargetTransform.position, 0.2f);
                 transform.DORotateQuaternion(task.TargetTransform.rotation, 0.2f).OnComplete(() => {
                     if (task.ObjectToScrew != null)
@@ -107,7 +110,13 @@ public class ItemScrewHelper : MonoBehaviour
         {
             if (m_MovePress.GetStateDown(SteamVR_Input_Sources.Any))
             {
+                sound.Play();
                 previousDelta = m_MoveValue.axis.x;
+            }
+
+            if (m_MovePress.GetStateUp(SteamVR_Input_Sources.Any))
+            {
+                sound.Stop();
             }
 
             float diff = 0;
@@ -153,6 +162,8 @@ public class ItemScrewHelper : MonoBehaviour
                 targetPosition = Vector3.zero;
                 passedDelta = 0;
                 task = null;
+                materialRenderer.material = standartMaterial;
+                sound.Stop();
             }
         }
     }

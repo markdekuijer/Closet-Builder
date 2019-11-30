@@ -15,9 +15,9 @@ public class FollowHead : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        transform.localPosition = target.transform.localPosition;
-        transform.localRotation = target.transform.localRotation;
+        transform.localRotation = Quaternion.Lerp(transform.localRotation, target.transform.localRotation, Time.deltaTime);
+        transform.localPosition = Vector3.MoveTowards(transform.localPosition, target.transform.localPosition, Time.deltaTime * 2.5f);
     }
 }

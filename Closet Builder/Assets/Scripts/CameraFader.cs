@@ -10,7 +10,6 @@ public class CameraFader : Singleton<CameraFader>
 
     public void SwitchSequence()
     {
-        camFadeimage.gameObject.SetActive(true);
-        camFadeimage.DOFade(1, 2f).SetEase(Ease.InQuad).OnComplete(() => { camFadeimage.DOFade(0, 2f).SetDelay(2f).SetEase(Ease.OutQuad).OnComplete(() => { camFadeimage.gameObject.SetActive(false); }); });
+        camFadeimage.DOColor(Color.black, 1f).SetEase(Ease.InQuad).OnComplete(() => { camFadeimage.DOColor(Color.clear, 1f).SetDelay(1f).SetEase(Ease.OutQuad); });
     }
 }

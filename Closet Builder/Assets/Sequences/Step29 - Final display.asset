@@ -36,15 +36,15 @@ MonoBehaviour:
   - ID: DoorHandleRight
     Position: {x: 1.3832985, y: 1.0922, z: -0.66274095}
     Scale: {x: -1, y: 1, z: 1}
-    RotationEuler: {x: 0, y: 270.0001, z: 0}
+    RotationEuler: {x: -0, y: 270.00006, z: 0}
   - ID: DoorHandleLeft
     Position: {x: 2.1828494, y: 1.092, z: -0.66225445}
     Scale: {x: 1, y: 1, z: 1}
-    RotationEuler: {x: -0, y: 90.00005, z: -0}
+    RotationEuler: {x: -0, y: 90.00005, z: 0}
   - ID: RightDoor
     Position: {x: 1.3910999, y: 0.083000004, z: -1.0124002}
     Scale: {x: 1, y: 1, z: 1}
-    RotationEuler: {x: 0, y: 270, z: 0}
+    RotationEuler: {x: -0, y: 270, z: 0}
   - ID: MiddlePlate
     Position: {x: 1.7809999, y: 0.092, z: -1.2554002}
     Scale: {x: 1, y: 1, z: 1}
@@ -58,7 +58,7 @@ MonoBehaviour:
     Scale: {x: 1, y: 1, z: 1}
     RotationEuler: {x: -0, y: 0, z: 0}
   - ID: ClothBar
-    Position: {x: 2.1625, y: 1.8095, z: -1.2625}
+    Position: {x: 2.1625, y: 1.7928, z: -1.2625}
     Scale: {x: 1, y: 1, z: 1}
     RotationEuler: {x: -0, y: 0, z: 0}
   - ID: MiddleRack

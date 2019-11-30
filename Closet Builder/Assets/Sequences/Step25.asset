@@ -24,15 +24,11 @@ MonoBehaviour:
   - ID: LeftWall
     Position: {x: 0.70519984, y: 0.0122004375, z: -0.38714984}
     Scale: {x: 1, y: 1, z: 1}
-    RotationEuler: {x: 0.00016058666, y: 89.99967, z: -0.00033324744}
+    RotationEuler: {x: 0.00016058664, y: 89.99967, z: -0.00033324744}
   - ID: RightWall
     Position: {x: 0.7056998, y: 0.012000404, z: 0.38434994}
     Scale: {x: 1, y: 1, z: 1}
-    RotationEuler: {x: 0.00016602008, y: 89.99966, z: -0.00020345006}
-  - ID: DoorHandleLeft
-    Position: {x: -3.3702855, y: 1.0922999, z: 2.7028296}
-    Scale: {x: 1, y: 1, z: 1}
-    RotationEuler: {x: -0, y: 38.688953, z: 0}
+    RotationEuler: {x: 0.00016602008, y: 89.99966, z: -0.00020345005}
   - ID: LeftDoor
     Position: {x: -0.6400001, y: 0.083000004, z: 0.57659984}
     Scale: {x: 1, y: 1, z: 1}
@@ -41,6 +37,10 @@ MonoBehaviour:
     Position: {x: -4.1846113, y: 1.0922999, z: 2.6594167}
     Scale: {x: -1, y: 1, z: 1}
     RotationEuler: {x: -0, y: 212.65492, z: 0}
+  - ID: DoorHandleLeft
+    Position: {x: -3.3702855, y: 1.0922999, z: 2.7028296}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: -0, y: 38.688953, z: 0}
   - ID: RightDoor
     Position: {x: -1.4239001, y: 0.083000004, z: 0.57659984}
     Scale: {x: 1, y: 1, z: 1}
@@ -60,11 +60,11 @@ MonoBehaviour:
   - ID: ClothBar
     Position: {x: 0.7061, y: 1.8645, z: -0.3811}
     Scale: {x: 1, y: 1, z: 1}
-    RotationEuler: {x: -0, y: 89.99983, z: -0}
+    RotationEuler: {x: -0, y: 89.99983, z: 0}
   - ID: MiddleRack
-    Position: {x: 0.94889, y: 0.4264, z: 0.0084577}
+    Position: {x: 0.94889, y: 0.6264, z: 0.0084577}
     Scale: {x: 1, y: 1, z: 1}
-    RotationEuler: {x: -0, y: 89.99983, z: -0}
+    RotationEuler: {x: -0, y: 89.99983, z: 0}
   - ID: TopRack
     Position: {x: 0.9492017, y: 0.7756997, z: -0.008049816}
     Scale: {x: 1, y: 1, z: 1}
@@ -80,7 +80,7 @@ MonoBehaviour:
   - ID: Top
     Position: {x: 0.963704, y: 1.9022697, z: 0.39003}
     Scale: {x: 1, y: 1, z: 1}
-    RotationEuler: {x: 0.00015696435, y: 89.99966, z: -0.00052281225}
+    RotationEuler: {x: 0.00015696432, y: 89.99966, z: -0.0005228122}
   - ID: BottomHolder (1)
     Position: {x: 0.5437001, y: 0.08700045, z: 0.38000026}
     Scale: {x: 1, y: 1, z: -1}
@@ -88,4 +88,4 @@ MonoBehaviour:
   - ID: BackPanel
     Position: {x: 0.46094096, y: 0.089201055, z: -0.0011185706}
     Scale: {x: 1, y: 1, z: 1}
-    RotationEuler: {x: 0.00016602008, y: 89.99966, z: -0.00020345006}
+    RotationEuler: {x: 0.00016602008, y: 89.99966, z: -0.00020345005}

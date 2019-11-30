@@ -24,15 +24,11 @@ MonoBehaviour:
   - ID: LeftWall
     Position: {x: 0.70519984, y: 0.0122004375, z: -0.38714984}
     Scale: {x: 1, y: 1, z: 1}
-    RotationEuler: {x: 0.00016058664, y: 89.99967, z: -0.00033324747}
+    RotationEuler: {x: 0.00016058667, y: 89.99967, z: -0.0003332475}
   - ID: RightWall
     Position: {x: 0.7056998, y: 0.012000404, z: 0.38434994}
     Scale: {x: 1, y: 1, z: 1}
     RotationEuler: {x: 0.00016602007, y: 89.99966, z: -0.00020345004}
-  - ID: DoorHandleLeft
-    Position: {x: -3.3702855, y: 1.0922999, z: 2.7028296}
-    Scale: {x: 1, y: 1, z: 1}
-    RotationEuler: {x: -0, y: 38.688953, z: 0}
   - ID: LeftDoor
     Position: {x: 0.961, y: 0.0854, z: -0.37}
     Scale: {x: 1, y: 1, z: 1}
@@ -41,8 +37,12 @@ MonoBehaviour:
     Position: {x: -4.1846113, y: 1.0922999, z: 2.6594167}
     Scale: {x: -1, y: 1, z: 1}
     RotationEuler: {x: -0, y: 212.65492, z: 0}
+  - ID: DoorHandleLeft
+    Position: {x: -3.3702855, y: 1.0922999, z: 2.7028296}
+    Scale: {x: 1, y: 1, z: 1}
+    RotationEuler: {x: -0, y: 38.688953, z: 0}
   - ID: RightDoor
-    Position: {x: 0.98958, y: 0.0861, z: 0.345}
+    Position: {x: 0.961, y: 0.0854, z: 0.37}
     Scale: {x: 1, y: 1, z: 1}
     RotationEuler: {x: 0.0000012074183, y: 0.00016733963, z: 8.387684e-14}
   - ID: MiddlePlate

@@ -58,7 +58,7 @@ public class ScrewTask : BaseTask
 
     private void OnTriggerStay(Collider other)
     {
-        if (!checkCollision)
+        if (!checkCollision || Running == false || Completed == true)
         {
             return;
         }
@@ -78,6 +78,11 @@ public class ScrewTask : BaseTask
 
     private void OnTriggerExit(Collider other)
     {
+        if (!checkCollision || Running == false || Completed == true)
+        {
+            return;
+        }
+
         if (other.gameObject.CompareTag(targetTag))
         {
             other.GetComponent<ItemScrewHelper>()?.ForceInRangeMaterial(false, null);

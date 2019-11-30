@@ -12,12 +12,18 @@ public class HammerTask : BaseTask
     [SerializeField] private float minTimeBetweenHits;
     [SerializeField] private TargetAxis ScrewAxis;
     [SerializeField] private float depth;
+    private AudioSource hammertick;
 
     private float currentTimeBetweenHits;
 
     private Tween hammerTween;
     private float currentHits;
     private float start;
+
+    private void Start()
+    {
+        hammertick = GetComponent<AudioSource>();
+    }
 
     protected override void StartTask()
     {
@@ -38,6 +44,7 @@ public class HammerTask : BaseTask
             hammerTween.Kill();
         }
 
+        hammertick.Play();
         currentHits++;
         float t = currentHits / hitsRequired;
         switch (ScrewAxis)
@@ -80,6 +87,11 @@ public class HammerTask : BaseTask
 
     private void OnCollisionEnter(Collision collision)
     {
+        if(Running == false || Completed == true)
+        {
+            return;
+        }
+
         if(collision.transform.CompareTag("Hammer"))
         {
             Vector3 dir = collision.gameObject.GetComponent<ItemHammerHelper>().targetTransform.position - transform.position;

@@ -18,10 +18,12 @@ public class ItemPlacementHelper : MonoBehaviour
     private bool completed;
     private PlaceTask task;
     private bool inversed;
+    private AudioSource placedAudio;
 
     private void Start()
     {
         materialRenderer = GetComponentsInChildren<Renderer>().ToList();
+        placedAudio = GetComponent<AudioSource>();
     }
 
     public void ForceInRangeMaterial(bool shouldForce, PlaceTask placeTask, bool inversed = false)
@@ -94,6 +96,7 @@ public class ItemPlacementHelper : MonoBehaviour
             }
             completed = true;
             task.OnTaskComplete?.Invoke(gameObject);
+            placedAudio.Play();
         }
     }
 

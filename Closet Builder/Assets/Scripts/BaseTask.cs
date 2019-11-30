@@ -53,7 +53,7 @@ public class BaseTask : MonoBehaviour
         Running = false;
         Completed = true;
         Debug.Log("[TASK] Finished task: " + this.GetType());
-        taskCompletedAudio.Play();
+        //taskCompletedAudio.Play();
         OnTaskComplete -= TaskComplete;
         highlightedIndicator.gameObject.SetActive(false);
         Sequence.TaskCompleted();
