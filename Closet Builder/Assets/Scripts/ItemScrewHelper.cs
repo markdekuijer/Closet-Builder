@@ -96,7 +96,6 @@ public class ItemScrewHelper : MonoBehaviour
 
     private float previousDelta;
 
-    private float totalDifferenceFromPreviousTask;
     private Vector3 startPosFromPreviousTask;
 
     private void LateUpdate()
@@ -143,19 +142,10 @@ public class ItemScrewHelper : MonoBehaviour
             transform.position = Vector3.Lerp(targetPosition, task.FinalTargetPos, passedPercentage);
             transform.rotation = Quaternion.Euler(lockRotationVector.x, lockRotationVector.y, Mathf.Lerp(0, task.TotalRotation, passedPercentage));
 
-            if (totalDifferenceFromPreviousTask == 0)
-            {
-                totalDifferenceFromPreviousTask = Vector3.Distance(targetPosition, task.PlaceTask.FinalTarget.position);
-                Debug.Log("Found new distance!" + totalDifferenceFromPreviousTask);
-            }
-
-            //previously here
-
             if (passedDelta == task.RequiredPassedDelta)
             {
                 task.ObjectToScrew.transform.SetParent(null);
                 task.OnTaskComplete?.Invoke(task.ObjectToScrew);
-                totalDifferenceFromPreviousTask = 0f;
                 inRange = false;
                 grabbed = false;
                 inPlace = false;
@@ -166,26 +156,5 @@ public class ItemScrewHelper : MonoBehaviour
                 sound.Stop();
             }
         }
-    }
-
-    public Vector3 GetTargetPos(float t)
-    {
-        switch (task.ScrewAxis)
-        {
-            case TargetAxis.x:
-                return Vector3.Lerp(startPosFromPreviousTask, task.FinalTargetPos + new Vector3(totalDifferenceFromPreviousTask, 0, 0), t);
-            case TargetAxis.y:
-                return Vector3.Lerp(startPosFromPreviousTask, task.FinalTargetPos + new Vector3(0, totalDifferenceFromPreviousTask, 0), t);
-            case TargetAxis.z:
-                return Vector3.Lerp(startPosFromPreviousTask, task.FinalTargetPos + new Vector3(0, 0, totalDifferenceFromPreviousTask), t);
-            case TargetAxis.minx:
-                return Vector3.Lerp(startPosFromPreviousTask, task.FinalTargetPos - new Vector3(totalDifferenceFromPreviousTask, 0, 0), t);
-            case TargetAxis.miny:
-                return Vector3.Lerp(startPosFromPreviousTask, task.FinalTargetPos - new Vector3(0, totalDifferenceFromPreviousTask, 0), t);
-            case TargetAxis.minz:
-                return Vector3.Lerp(startPosFromPreviousTask, task.FinalTargetPos - new Vector3(0, 0, totalDifferenceFromPreviousTask), t);
-        }
-
-        return Vector3.zero;
     }
 }

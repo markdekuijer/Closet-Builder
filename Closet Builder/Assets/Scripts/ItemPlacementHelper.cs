@@ -90,13 +90,18 @@ public class ItemPlacementHelper : MonoBehaviour
                 }
             }
 
+            Color standartMaterialColor = Color.white;
             foreach (Renderer renderer in materialRenderer)
             {
-                renderer.material = standartMaterial;
+                MaterialPropertyBlock matBlock = new MaterialPropertyBlock();
+                renderer.GetPropertyBlock(matBlock);
+                matBlock.SetColor("_Color", standartMaterialColor);
+                renderer.SetPropertyBlock(matBlock);
             }
+
+            placedAudio.Play();
             completed = true;
             task.OnTaskComplete?.Invoke(gameObject);
-            placedAudio.Play();
         }
     }
 
